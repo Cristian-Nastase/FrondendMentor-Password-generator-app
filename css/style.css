@@ -1,0 +1,23 @@
+#form
+{
+    display: flex;
+    flex-direction: column;
+
+    textarea
+    {
+        width: inherit;
+        resize: none;
+    }
+
+    fieldset
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#strength-checker
+{
+    display: flex;
+    justify-content: space-between;
+}

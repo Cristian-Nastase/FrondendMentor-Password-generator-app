@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="script.js" defer></script>
+
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+
+  <main id="password-widget">
+    <section id="content">
+      <h1 class="header-text">Password Generator</h1>
+
+      <article id="password-generator">
+        <form id="form" novalidate>
+          <textarea id="generated-password" placeholder="P4$5W0rD!" readonly></textarea>
+        
+          <fieldset>
+            <label for="length">Character Length</label>
+            <input name="length" type="range" min="1" max="20">
+
+            
+            <label>
+              <input name="uppercase" type="checkbox">
+              Include Uppercase Letters
+            </label>
+
+            <label>
+              <input name="lowercase" type="checkbox">
+              Include Lowercase Letters
+            </label>
+
+            <label>
+              <input name="numbers" type="checkbox">
+              Include Numbers
+            </label>
+
+            <label>
+              <input name="symbols" type="checkbox">
+              Include Symbols
+            </label>
+
+            <div id="strength-checker">
+              <p class="paragraph-text">Strength</p>
+              <div id="strength-bar">
+                <p class="bold-paragraph-text">MEDIUM</p>
+              </div>
+            </div>
+
+            <button id="generate-button" type="submit">Generate</button>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
