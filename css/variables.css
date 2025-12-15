@@ -1,0 +1,49 @@
+:root
+{
+    /* Colors */
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --grey-950: #08070B;
+    --grey-900: #14131b;
+    --grey-850: #18171f;
+    --grey-800: #24232C;
+    --grey-700: #54535B;
+    --grey-600: #817D92;
+    --grey-200: #E6E5EA;
+
+    --green: #A4FFAF;
+
+    --yellow: #F8CD65;
+
+    --orange: #FB7C58;
+
+    --red: #F64A4A;
+
+    --gradient: linear-gradient(90deg, #14131B, #08070B);
+
+    /* Typography */
+    --big-header-size: 2rem;
+    --small-header-size: 1.5rem;
+    --big-paragraph-size: 1.125rem;
+    --small-paragraph-size: 1rem;
+
+    --big-header-height: 2.625rem;
+    --small-header-height: 2rem;
+    --big-paragraph-height: 1.5rem;
+    --small-paragraph-height: 1.25rem;
+
+    /* Spacing */
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-700: 3.5rem;
+    
+    --spacing-1000: 5rem;
+    --spacing-1300: 6.5rem;
+    --spacing-1600: 8rem;
+    --spacing-2000: 10rem;
+    --spacing-2200: 11rem;
+    --spacing-2300: 11.5rem;
+}
