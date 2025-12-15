@@ -13,53 +13,58 @@
 </head>
 <body>
 
-  <main id="password-widget">
+  <main id="widget">
     <section id="content">
-      <h1 class="header-text">Password Generator</h1>
+      <h1 class="title header--text small--header">Password Generator</h1>
 
-      <article id="password-generator">
-        <form id="form" novalidate>
-          <div id="password-text">
-            <textarea id="generated-password" placeholder="P4$5W0rD!" readonly></textarea>
+      <article id="generator">
+        <form id="form" class="form" novalidate>
+          <div id="password">
+            <textarea id="password-text" class="widget generated header--text big--header" placeholder="P4$5W0rD!" readonly></textarea>
             
-            <button id="copy-to-clipboard" type="button">
+            <button id="password-copy" class="copy button" type="button"> 
                 <img src="assets/images/icon-copy.svg" alt="copy">
             </button>
           </div>
         
-          <fieldset>
-            <label for="length">Character Length <span id="current-length"></span></label>
-            <input name="length" type="range" min="4" max="16">
+          <fieldset class="widget field paragraph--text small--paragraph">
+            <label for="length" class="two--columns">Character Length <span id="form-length" class="counter header--text big--header"></span></label>
+            <input class="slider" name="length" type="range" min="4" max="16">
 
             
-            <label>
+            <label class="checkbox">
               <input name="uppercase" type="checkbox" required>
-              Include Uppercase Letters
+              <p class="label">Include Uppercase Letters</p>
             </label>
 
-            <label>
+            <label class="checkbox">
               <input name="lowercase" type="checkbox">
-              Include Lowercase Letters
+              <p class="label">Include Lowercase Letters</p>
             </label>
 
-            <label>
+            <label class="checkbox">
               <input name="numbers" type="checkbox">
-              Include Numbers
+              <p class="label">Include Numbers</p>
             </label>
 
-            <label>
+            <label class="checkbox">
               <input name="symbols" type="checkbox">
-              Include Symbols
+              <p class="label">Include Symbols</p>
             </label>
 
-            <div id="strength-checker">
-              <p class="paragraph-text">Strength</p>
-              <div id="strength-bar">
-                <p class="bold-paragraph-text">MEDIUM</p>
+            <div id="strength-checker" class="inner--widget two--columns capitalize">
+              <p class="paragraph--text small--paragraph lighter">Strength</p>
+              <div id="bar">
+                <p class="header--text small--header bold">MEDIUM</p>
               </div>
             </div>
 
-            <button id="generate-button" type="submit">Generate</button>
+            <button id="generate-button" class="button paragraph--text big--paragraph capitalize bold generate" type="submit">
+              Generate
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.10553 12L11.1055 6.00002L5.10553 0L3.84051 1.26501L7.681 5.10547L6.10352e-05 5.10547V6.8946L7.681 6.8946L3.84051 10.735L5.10553 12Z" fill="#A4FFAF"/>
+              </svg>
+            </button>
           </fieldset>
         </form>
       </article>

@@ -1,9 +1,9 @@
 const form = document.getElementById("form");
-const textArea = document.getElementById("generated-password");
+const textArea = document.getElementById("password-text");
 
-const copyButton = document.getElementById("copy-to-clipboard");
+const copyButton = document.getElementById("password-copy");
 
-const lengthText = document.getElementById("current-length");
+const lengthText = document.getElementById("form-length");
 
 // Password-text events
 

@@ -1,45 +1,152 @@
 
+@import url(components.css);
+@import url(fonts.css);
+@import url(variables.css);
+
+body
+{
+    min-height: 100vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gradient);
+}
+
 #form
 {
     display: flex;
     flex-direction: column;
 
-    width: 30rem;
+    gap: var(--spacing-200);
 
-    fieldset
-    {
-        display: flex;
-        flex-direction: column;
-    }
+    width: 30rem;
 }
 
-#form > #password-text
+#password
 {
     width: inherit;
+
     position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    textarea
-    {
-        width: inherit;
-        resize: none;
-    }
-
-    button#copy-to-clipboard
-    {
-        position: absolute;
-        right: 5px;
-
-        background: none;
-        border: 0;
-    }
 }
 
-#strength-checker
+#generate-button
+{
+    width: 100%;
+}
+
+
+/* Specific blocks */
+
+/* Above text */
+
+.title
+{
+    text-align: center;
+    color: var(--grey-600);
+}
+
+/* Generated password widget */
+
+.generated
 {
     display: flex;
-    justify-content: space-between;
+
+    overflow-y: hidden;
+
+    width: 100%;
+    height: var(--spacing-700);
+
+    padding: var(--spacing-200) var(--spacing-200);
+
+    resize: none;
+
+    color: var(--white);
+}
+
+.generated:hover
+{
+    cursor: text;
+}
+
+.generated:focus
+{
+    outline: 0;
+}
+
+.copy
+{
+    position: absolute;
+    right: var(--spacing-200);
+
+    transition: filter 0.1s;
+}
+
+.copy:hover
+{
+    cursor: pointer;
+    filter: brightness(100);
+}
+
+
+/* Generator modifiers */
+
+.counter
+{
+    color:var(--green);
+}
+
+
+/* Strength meter modifiers */
+
+.lighter
+{
+    color:var(--grey-600);
+}
+
+.inner--widget
+{
+    padding: 0 var(--spacing-400);
+    background-color: var(--grey-850);
+}
+
+/* Generate button modifier */
+
+.generate
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-300);
+
+    position: relative;
+
+    outline: 1px solid var(--green);
+
+    padding: var(--spacing-200) 0;
+
+    color: var(--green);
+
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.generate:hover
+{
+    background-color: var(--green);
+    color: var(--black);
+}
+
+.generate svg path
+{
+    transition: fill 0.2s;
+}
+
+.generate:hover svg path
+{
+    fill: var(--black);
 }
