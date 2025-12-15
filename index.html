@@ -19,15 +19,21 @@
 
       <article id="password-generator">
         <form id="form" novalidate>
-          <textarea id="generated-password" placeholder="P4$5W0rD!" readonly></textarea>
+          <div id="password-text">
+            <textarea id="generated-password" placeholder="P4$5W0rD!" readonly></textarea>
+            
+            <button id="copy-to-clipboard" type="button">
+                <img src="assets/images/icon-copy.svg" alt="copy">
+            </button>
+          </div>
         
           <fieldset>
-            <label for="length">Character Length</label>
-            <input name="length" type="range" min="1" max="20">
+            <label for="length">Character Length <span id="current-length"></span></label>
+            <input name="length" type="range" min="4" max="16">
 
             
             <label>
-              <input name="uppercase" type="checkbox">
+              <input name="uppercase" type="checkbox" required>
               Include Uppercase Letters
             </label>
 

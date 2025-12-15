@@ -1,7 +1,26 @@
+
 #form
 {
     display: flex;
     flex-direction: column;
+
+    width: 30rem;
+
+    fieldset
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#form > #password-text
+{
+    width: inherit;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     textarea
     {
@@ -9,10 +28,13 @@
         resize: none;
     }
 
-    fieldset
+    button#copy-to-clipboard
     {
-        display: flex;
-        flex-direction: column;
+        position: absolute;
+        right: 5px;
+
+        background: none;
+        border: 0;
     }
 }
 
