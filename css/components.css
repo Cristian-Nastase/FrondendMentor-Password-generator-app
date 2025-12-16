@@ -171,3 +171,12 @@
 {
     background: url(../assets/images/icon-check.svg) center no-repeat;
 }
+
+.bar-meter
+{
+    width: 0.4rem;
+    height: 1.5rem;
+
+    border:1px solid var(--white);
+    fill: none;
+}

@@ -22,14 +22,14 @@
           <div id="password">
             <textarea id="password-text" class="widget generated header--text big--header" placeholder="P4$5W0rD!" readonly></textarea>
             
-            <button id="password-copy" class="copy button" type="button"> 
+            <button id="password-copy" class="copy button" type="button" data-copy-state="">
                 <img src="assets/images/icon-copy.svg" alt="copy">
             </button>
           </div>
         
           <fieldset class="widget field paragraph--text small--paragraph">
             <label for="length" class="two--columns">Character Length <span id="form-length" class="counter header--text big--header"></span></label>
-            <input class="slider" name="length" type="range" min="4" max="16">
+            <input id="slider" class="slider" name="length" type="range" min="4" max="16">
 
             
             <label class="checkbox">
@@ -54,8 +54,25 @@
 
             <div id="strength-checker" class="inner--widget two--columns capitalize">
               <p class="paragraph--text small--paragraph lighter">Strength</p>
-              <div id="bar">
-                <p class="header--text small--header bold">MEDIUM</p>
+              <div class="bar">
+                <p id="bar-text" class="header--text small--header bold"></p>
+
+                <svg class="bar-meter" width="12" height="32" fill="yellow" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100"/>
+                </svg>
+
+                <svg class="bar-meter" width="12" height="32" fill="yellow" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100"/>
+                </svg>                
+                
+                <svg class="bar-meter" width="12" height="32" fill="yellow" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100"/>
+                </svg>                
+                
+                <svg class="bar-meter" width="12" height="32" fill="yellow" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100"/>
+                </svg>
+
               </div>
             </div>
 

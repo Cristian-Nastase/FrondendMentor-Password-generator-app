@@ -57,6 +57,9 @@ body
 {
     display: flex;
 
+    align-items: center;
+    justify-content: center;
+
     overflow-y: hidden;
 
     width: 100%;
@@ -67,6 +70,9 @@ body
     resize: none;
 
     color: var(--white);
+    line-height: var(--spacing-700);
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .generated:hover
@@ -85,6 +91,64 @@ body
     right: var(--spacing-200);
 
     transition: filter 0.1s;
+
+    display: flex;
+    gap: var(--spacing-200);
+    align-items: center;
+}
+
+.copy::before
+{
+    content: "COPIED";
+    color: var(--green);
+
+    font-family: 'JetBrainsMono';
+
+    display: none;
+
+    font-size: var(--small-paragraph-size);
+}
+
+.copy[data-copy-state="appear"]::before
+{
+    animation: copy-text-appear 0.5s;
+    display: block;
+}
+
+.copy[data-copy-state="disappear"]::before
+{
+    animation: copy-text-disappear 0.2s;
+    display: block;
+}
+
+@keyframes copy-text-appear 
+{
+    from
+    {
+        transform: translateX(10%);
+        opacity: 0%;
+    }   
+
+    to
+    {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes copy-text-disappear
+{
+    from
+    {
+        transform: translateX(0);
+        opacity: 100%; 
+    }
+
+    to
+    {
+        transform: translateX(10%);
+        opacity: 0%; 
+    }
 }
 
 .copy:hover
@@ -149,4 +213,32 @@ body
 .generate:hover svg path
 {
     fill: var(--black);
+}
+
+.bar
+{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--spacing-100);
+}
+
+@media (max-width: 32rem) 
+{
+    :root
+    {
+        --big-header-size: 1.8rem;
+        --small-header-size: 1.2rem;
+        --big-paragraph-size: 1rem;
+        --small-paragraph-size: 1rem;
+
+        --spacing-400: 1rem;
+    }
+
+    #form
+    {
+        width: 22rem;
+    }
 }

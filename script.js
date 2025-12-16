@@ -3,14 +3,39 @@ const textArea = document.getElementById("password-text");
 
 const copyButton = document.getElementById("password-copy");
 
+const currentLegth = document.getElementById("slider");
 const lengthText = document.getElementById("form-length");
+
+const barText = document.getElementById("bar-text");
+const meterBars = document.getElementsByClassName("bar-meter");
 
 // Password-text events
 
 // Copy to clipboard
 copyButton.addEventListener("click", function()
 {
-    navigator.clipboard.writeText(textArea.value);
+    navigator.clipboard
+    .writeText(textArea.value)
+    .then(() => {
+       if(textArea.value != "") copyButton.setAttribute("data-copy-state", "appear");
+    });
+    
+})
+
+copyButton.addEventListener("animationend", function()
+{
+    let copyState = copyButton.dataset["copyState"];
+    if(copyState === "appear")
+        {
+            setTimeout(function()
+            {
+                copyButton.setAttribute("data-copy-state", "disappear");
+            }, 2000);
+        }
+    else
+        {
+            copyButton.setAttribute("data-copy-state", " ");
+        }
 })
 
 // Select all the text when clicked
@@ -22,7 +47,11 @@ textArea.addEventListener("click", function(e)
 
 // Form events
 
-window.addEventListener("load", onChange);
+window.addEventListener("load", function()
+{
+    textArea.value = "";
+    lengthText.textContent = currentLegth.value;
+});
 
 form.addEventListener("submit", (e) =>
 {
@@ -129,5 +158,53 @@ function changeUI(data, password, secureCriterias)
 
     // calculate the secure meter
 
+    let allStates = 
+    {
+        strong: {content: "Strong", color: "var(--green)", length: 4, },
+        medium: {content: "Medium", color: "var(--yellow)", length: 3, },
+        weak: {content: "Weak", color: "var(--orange)", length: 2,},
+        tooWeak: {content: "Too weak!", color: "var(--red)", length: 1,},
+    };
+
+    let currentState;
+
+    if(secureCriterias.length < 8)
+        {
+            currentState = allStates.tooWeak;
+        }
+    else
+    {
+        switch(secureCriterias.differentTypes)
+            {
+                case 1:
+                    currentState = allStates.tooWeak;
+                    break
+                case 2:
+                    currentState = allStates.weak;
+                    break
+                case 3:
+                    currentState = allStates.medium;
+                    break
+                case 4:
+                    currentState = allStates.strong;
+                    break
+                default:
+                    currentState = allStates.tooWeak;
+            }
+    }
+
     // switch for changing the text and points
+
+    barText.textContent = currentState.content;
+
+    let i = 0;
+
+    for(i = 0; i < currentState.length; i++)
+        {
+            meterBars[i].style.fill = currentState.color;
+        }
+    for(i; i < 4; i++)
+        {
+            meterBars[i].style.fill = "none";
+        }
 }
